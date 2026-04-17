@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workspace — LandingRodi AI</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="workspace-body">
+  <div class="workspace-layout">
+    <aside class="workspace-sidebar">
+      <a class="brand" href="/">LandingRodi <span>AI</span></a>
+      <p class="sidebar-copy">منصة AI-first لتوليد الاستراتيجية، النص، والمعاينة من برومبت واحد.</p>
+      <button id="resetProject" class="btn btn-secondary full">مشروع جديد</button>
+
+      <div class="sidebar-block glass-card">
+        <small>Strategy Snapshot</small>
+        <div class="snapshot-item"><span>Goal</span><b id="snapshotGoal">—</b></div>
+        <div class="snapshot-item"><span>Audience</span><b id="snapshotAudience">—</b></div>
+        <div class="snapshot-item"><span>Angle</span><b id="snapshotAngle">—</b></div>
+        <div class="snapshot-item"><span>CTA</span><b id="snapshotCta">—</b></div>
+      </div>
+
+      <div class="sidebar-block glass-card">
+        <small>Quick prompts</small>
+        <div class="chip-stack">
+          <button class="chip" data-chip="عيادة أسنان">عيادة أسنان</button>
+          <button class="chip" data-chip="واتساب">واتساب</button>
+          <button class="chip" data-chip="راقي">راقي</button>
+          <button class="chip" data-chip="حجز موعد">حجز موعد</button>
+          <button class="chip" data-chip="منتج مباشر">منتج مباشر</button>
+          <button class="chip" data-chip="Lead Gen">Lead Gen</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="workspace-main">
+      <section class="workspace-top glass-card">
+        <div>
+          <div class="eyebrow">Workspace</div>
+          <h1>حوّل البرومبت إلى صفحة هبوط كاملة</h1>
+          <p>Generate → Improve → Render</p>
+        </div>
+        <a href="/" class="btn btn-secondary">رجوع للهوم</a>
+      </section>
+
+      <section class="workspace-grid">
+        <div class="left-col">
+          <div class="glass-card form-card">
+            <label for="promptInput">صف الصفحة</label>
+            <textarea id="promptInput" placeholder="مثال: اعمل صفحة هبوط لمركز تجميل في عمان هدفها واتساب وتكون راقية وواضحة"></textarea>
+            <div class="inline-actions compact">
+              <button id="generateBtn" class="btn btn-primary">Generate Copy</button>
+              <button id="renderBtn" class="btn btn-secondary" disabled>Build Landing</button>
+            </div>
+          </div>
+
+          <div class="glass-card messages-card">
+            <div class="card-title-row"><h3>Conversation</h3><span id="statusText">جاهز</span></div>
+            <div id="messages" class="messages"></div>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="glass-card copy-card">
+            <div class="card-title-row"><h3>Generated Copy</h3><span>Structured</span></div>
+            <pre id="copyOutput" class="copy-output empty">هنا سيظهر النص المنظّم بعد التوليد.</pre>
+            <div class="inline-actions wrap">
+              <button class="btn btn-secondary improveBtn" data-instruction="خليها أفخم وأكثر ثقة" disabled>أفخم</button>
+              <button class="btn btn-secondary improveBtn" data-instruction="قصر النص وخليه أوضح" disabled>أقصر</button>
+              <button class="btn btn-secondary improveBtn" data-instruction="زود الإقناع وخلي ال CTA أقوى" disabled>إقناع أقوى</button>
+              <button class="btn btn-secondary improveBtn" data-instruction="خليها مناسبة أكثر لإعلانات فيسبوك" disabled>Facebook Ads</button>
+            </div>
+          </div>
+
+          <div class="glass-card preview-card">
+            <div class="card-title-row"><h3>Live Preview</h3><span id="previewBadge">No page yet</span></div>
+            <iframe id="previewFrame" title="Landing page preview"></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/assets/js/workspace.js"></script>
+</body>
+</html>
